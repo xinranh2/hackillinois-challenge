@@ -32,11 +32,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `Libraries to Install`
 
 npm install --save moment react-moment
+
 npm install --save moment-timezone
+
 npm install --save react-router-dom
+
 npm install react-bootstrap bootstrap
+
   npm install -g typescript 
+  
   npm install popper.js --save
+  
   npm install jquery
 
 
