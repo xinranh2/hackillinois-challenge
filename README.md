@@ -29,6 +29,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+### `Libraries to Install`
+
+npm install --save moment react-moment
+npm install --save moment-timezone
+npm install --save react-router-dom
+npm install react-bootstrap bootstrap
+  npm install -g typescript 
+  npm install popper.js --save
+  npm install jquery
+
+
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
