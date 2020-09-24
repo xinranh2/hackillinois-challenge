@@ -1,25 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Schedule from './Schedule';
+import Schedule from './components/Schedule';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [events, setEvents] = useState([]);
-
-  console.log("hello");
-
-  useEffect(() => {
-    //whatever is here runs once when component is loaded
-    //setEvents('bye');
-    //cannot do events = bye
-    fetch('https://api.hackillinois.org/event/').then(
-      res => res.json())
-      .then(json =>{
-        const temp = json.events;
-        temp.sort((a, b) => a.startTime - b.startTime);
-        setEvents(temp)
-    })
-  }, [])
+  
 
   //const { currentSection} = this.state;
   const signs = ['Friday', 'Saturday', 'Sunday'];
@@ -28,8 +14,21 @@ function App() {
   const keyDownButton = 70;
   
   return (
-    <div className="App"> 
-      {
+    <BrowserRouter>
+      <div>
+        <Route exact path = "/" component = {Schedule}></Route>
+      </div>
+    </BrowserRouter>
+    // <div className="App"> 
+    //   { 
+    //   events.map(event => (
+    //     <div>
+    //       <h2>{event.name}</h2>
+    //       <p>{event.description}</p>
+    //       <div>{new Date(event.startTime * 1000).toDateString()} - {new Date(event.endTime * 1000).toDateString()}</div>
+    //     </div>
+    //   ))
+      /* {
       events.map((e, i) => {
         const len = events.length;
         const dayOfWeek = Schedule.getDayofWeek(e.startTime);
@@ -63,8 +62,8 @@ function App() {
         }
         return (<div key={e.id} />);
       })
-      }
-    </div>
+      } */
+    //</div>
   );
 }
 
